@@ -38,7 +38,7 @@ def lambda_handler(event, context):
 
         print "Job Done!"
 
-        topic.publish(Subject="Portfolio Deployed", Message="Portfoilio deployed successfully!")
+        topic.publish(Subject="Portfolio Deployed", Message="Portfolio deployed successfully!")
         if job:
             codepipeline = boto3.client('codepipeline')
             codepipeline.put_job_success_result(jobId=job["id"])
